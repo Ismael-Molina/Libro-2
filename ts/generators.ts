@@ -1,9 +1,13 @@
-function* logGenerator(){
-    console.log(yield);
-    console.log(yield);
-    console.log(yield);
+//trtando con excepciones
+function* generator(){
+    try{
+        yield "foo";
+        throw Error("Test");
+    }
+    catch(err){
+        console.log(err.message);
+    }
 }
-var gen = logGenerator();
-gen.next();
-gen.next("abc");
-gen.next("hola mundo");
+var iterador = generator();
+var foo = iterador.next();
+console.log(foo.value);
