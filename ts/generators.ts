@@ -1,14 +1,17 @@
-//trtando con excepciones
-function* generator(){
-    try{
-        yield "foo";
-        throw Error("Test");
-    }
-    catch(err){
-        console.log(err.message);
-    }
+function getFirstName(){
+    setTimeout(function(){
+        gen.next("darkar")
+    },1000);
 }
-var iterador = generator();
-var foo = iterador.next();
-console.log(foo.value);
-var foo = iterador.next();
+function getSecondName(){
+    setTimeout(function(){
+        gen.next("ML")
+    },1000);
+}
+function* hola(){
+    var a = yield getFirstName();
+    var b = yield getSecondName();
+    console.log(a,b);
+}
+var gen =hola();
+gen.next();
