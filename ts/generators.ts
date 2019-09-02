@@ -1,10 +1,9 @@
-function* infinito() {
-    var i = 0;
-    while(true){
-        yield i++;
-    }
-} 
-var iterador = infinito();
-while(true){
-    console.log(iterador.next());
+function* logGenerator(){
+    console.log(yield);
+    console.log(yield);
+    console.log(yield);
 }
+var gen = logGenerator();
+gen.next();
+gen.next("abc");
+gen.next("hola mundo");

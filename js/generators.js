@@ -25,24 +25,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-function infinito() {
-    var i;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+function logGenerator() {
+    var _a, _b, _c, _d, _e, _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
             case 0:
-                i = 0;
-                _a.label = 1;
+                _b = (_a = console).log;
+                return [4 /*yield*/];
             case 1:
-                if (!true) return [3 /*break*/, 3];
-                return [4 /*yield*/, i++];
+                _b.apply(_a, [_g.sent()]);
+                _d = (_c = console).log;
+                return [4 /*yield*/];
             case 2:
-                _a.sent();
-                return [3 /*break*/, 1];
-            case 3: return [2 /*return*/];
+                _d.apply(_c, [_g.sent()]);
+                _f = (_e = console).log;
+                return [4 /*yield*/];
+            case 3:
+                _f.apply(_e, [_g.sent()]);
+                return [2 /*return*/];
         }
     });
 }
-var iterador = infinito();
-while (true) {
-    console.log(iterador.next());
-}
+var gen = logGenerator();
+gen.next();
+gen.next("abc");
+gen.next("hola mundo");
