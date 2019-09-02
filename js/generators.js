@@ -47,3 +47,4 @@ function generator() {
 var iterador = generator();
 var foo = iterador.next();
 console.log(foo.value);
+var foo = iterador.next();
